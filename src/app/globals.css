@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* Theme toggle specific colors - light mode */
+  --theme-border: #7B61FF;
+  --theme-line-light: #030303;
+  --theme-moon-light: #030303;
+  --theme-sun-light: #EE978C;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  
+  /* Theme toggle specific colors - dark mode */
+  --theme-border: #7B61FF;
+  --theme-line-dark: #DBDBDB;
+  --theme-moon-dark: #53FFC1;
+  --theme-sun-dark: #DBDBDB;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    
+    /* Theme toggle specific colors - dark mode */
+    --theme-border: #7B61FF;
+    --theme-line-dark: #DBDBDB;
+    --theme-moon-dark: #53FFC1;
+    --theme-sun-dark: #DBDBDB;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
